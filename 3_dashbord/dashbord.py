@@ -16,12 +16,12 @@ import pickle
 import re 
 
 # Importation des jeux de données
-dataset_train = pd.read_csv('data/df_train_final.csv',index_col=0)
-dataset_test = pd.read_csv('data/df_test_final.csv',index_col=0)
+dataset_train = pd.read_csv('3_dashbord/data/df_train_final.csv',index_col=0)
+dataset_test = pd.read_csv('3_dashbord/data/df_test_final.csv',index_col=0)
 
-target_train = pd.read_csv('data/target_train_final.csv',index_col=0)
-model = pickle.load(open('data/best_model.pickle', 'rb'))
-scaler = pickle.load(open('data/scaler.pickle','rb'))
+target_train = pd.read_csv('3_dashbord/data/target_train_final.csv',index_col=0)
+model = pickle.load(open('3_dashbord/data/best_model.pickle', 'rb'))
+scaler = pickle.load(open('3_dashbord/data/scaler.pickle','rb'))
 
 dataset_train_nostandar = scaler.inverse_transform(dataset_train)
 dataset_train_nostandar = pd.DataFrame(dataset_train_nostandar,columns=dataset_train.columns)
